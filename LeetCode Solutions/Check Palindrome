@@ -1,0 +1,33 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+                
+        int rev = 0;
+        int a=x;
+        if (x<0) 
+            return false;
+        if (x>INT_MAX || x < -INT_MAX) {
+           
+              return false;
+        }
+        
+        
+        while (x>0) {
+            int last_d = x % 10;
+            
+            if (rev>INT_MAX/10){
+                
+               return 0;
+            }
+            
+            rev = rev*10 + last_d;
+            x /= 10;
+        }
+        
+       if (a==rev)
+           return true;
+        else
+            return false;
+        
+    }
+};
