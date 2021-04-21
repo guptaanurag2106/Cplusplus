@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int numIdenticalPairs(vector& nums) {
+        // initialize the array of zero to count the occurence of element
+        int a[101] = { 0 }; 
+        
+        // counting the occurence of elements
+        for(int i = 0;i< nums.size();i++){
+            a[nums[i]]++;
+        }       
+        
+        // Initialising variable s to store the sum
+        int s = 0;
+        
+        for(int i = 0; i< 101;i++){
+           
+         //total combinations of pair possible for n element is (n*(n-1))/2 
+           s = s + (a[i]*(a[i]-1))/2;
+        }
+        return s;
+        
+    }
+}; 
