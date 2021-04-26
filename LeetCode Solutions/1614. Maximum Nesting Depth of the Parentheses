@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int maxDepth(string s) {
+        
+        vector<int> b;
+        int d=0;
+        int max=0;
+        for(auto i:s){
+            if(i=='('){
+               b.push_back(i);
+                d++;
+            }if(i==')'){
+                b.pop_back();
+                if(max<d) {max=d;}
+                d--;
+            }
+        }
+        return max;
+    }
+};
